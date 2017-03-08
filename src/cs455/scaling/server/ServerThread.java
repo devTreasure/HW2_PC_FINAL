@@ -27,7 +27,7 @@ public class ServerThread implements Runnable {
 	private int messagesSent = 0;
 	private int messagesReceived = 0;
 
-	public ServerThread(MyThreadPool threadPool) throws Exception {
+	public ServerThread(int ip_port,MyThreadPool threadPool) throws Exception {
 		this.threadPool = threadPool;
 		selector = SelectorProvider.provider().openSelector();
 
@@ -36,7 +36,7 @@ public class ServerThread implements Runnable {
 		serverChannel.configureBlocking(false);
 
 		// Bind the server socket to the specified address and port
-		InetSocketAddress isa = new InetSocketAddress(9898);
+		InetSocketAddress isa = new InetSocketAddress(ip_port);
 		serverChannel.socket().bind(isa);
 		System.out.println("Server Started on port:" + isa.getPort());
 

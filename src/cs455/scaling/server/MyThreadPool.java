@@ -8,7 +8,7 @@ public class MyThreadPool {
 	private final PoolWorker[] threads;
 	private final ArrayList taskList;
 
-	public MyThreadPool(int nThreads) {
+	public MyThreadPool( int nThreads) {
 		this.nThreads = nThreads;
 		taskList = new ArrayList();
 		threads = new PoolWorker[nThreads];
